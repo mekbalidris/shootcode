@@ -1,0 +1,266 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: black;
+    color: white;
+    overflow: hidden;
+    font-family: 'Poppins';
+}
+
+@keyframes waveAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes dropAnimate {
+    0% {
+        transform: translateY(-50%) scale(0.8);
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(120%) scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes moovebox1 {
+    0% {
+        transform: translate(-30%, 40%) scale(1.1) rotate(0deg);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translate(30%, -20%) scale(1.05) skew(5deg, -5deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-30%, 40%) scale(1) rotate(360deg);
+        opacity: 0.8;
+    }
+}
+
+@keyframes moovebox2 {
+    0% {
+        transform: translateY(-30%) scale(1) rotateX(0deg);
+    }
+    50% {
+        transform: translate(20%, 50%) scale(1.1) rotateX(180deg);
+    }
+    100% {
+        transform: translateY(-30%) scale(1) rotateX(360deg);
+    }
+}
+
+@keyframes moovebox3 {
+    0% {
+        transform: translate(-30%, -30%) scale(0.9) rotateY(0deg);
+    }
+    50% {
+        transform: translate(70%, 30%) scale(1.2) skewX(10deg) rotateY(180deg);
+    }
+    100% {
+        transform: translate(-30%, -30%) scale(1) rotateY(360deg);
+    }
+}
+
+
+
+@layer components{
+
+    form{
+        @apply flex flex-col gap-9 w-quart sm:w-80 text-black justify-center rounded-lg;
+    }
+
+    input{
+        @apply w-quart sm:w-72 h-8 rounded-lg p-2;
+    }
+
+    .nav {
+        @apply flex flex-row space-x-4 sm:space-x-20 justify-center p-3 font-bold text-lg rounded-b-3xl z-10 relative overflow-hidden;
+        background: linear-gradient(270deg, #5083e7, #2a5b97, #3e88e9, #5083e7);
+        background-size: 400% 400%;
+        animation: waveAnimation 3s ease infinite;
+    }
+
+    .nav-container {
+        @apply flex justify-center w-full;
+    }
+
+    .nav-wrapper {
+        @apply w-64 sm:w-96 rounded-2xl ;
+    }
+
+    .dropcontainer {
+        @apply flex flex-row justify-center gap-3 sm:gap-6 relative;
+        overflow: hidden;
+    }
+
+    .drop1 {
+        left: 20%;
+        animation: dropAnimate 1.5s linear infinite;
+        animation-delay: 1.5s;
+    }
+
+    .drop2 {
+        left: 30%;
+        animation: dropAnimate 1.5s linear infinite;
+        animation-delay: 0.5s;
+    }
+
+    .drop3 {
+        left: 40%;
+        animation: dropAnimate 1.5s linear infinite;
+        animation-delay: 2.5s;
+    }
+
+    .drop4 {
+        left: 50%;
+        animation: dropAnimate 1.5s linear infinite;
+        animation-delay: 0s;
+    }
+
+    .drop5 {
+        left: 60%;
+        animation: dropAnimate 1.5s linear infinite;
+        animation-delay: 2s;
+    }
+
+    .drop6 {
+        left: 70%;
+        animation: dropAnimate 1.5s linear infinite;
+        animation-delay: 1s;
+    }
+
+    .drop7 {
+        left: 80%;
+        animation: dropAnimate 1.5s linear infinite;
+        animation-delay: 3s;
+    }
+
+    .background{
+        @apply flex flex-row flex-wrap gap-3 h-[calc(100vh-4.5rem)] justify-center relative top-0 text-black;
+    }
+
+    .backgroundblock1{
+        @apply mt-7 h-20 flex flex-col justify-center blur-small pl-3 pr-3 rounded-xl z-0;
+        overflow: hidden;
+        animation: moovebox1 5s ease infinite;
+    }
+
+    .backgroundblock2{
+        @apply mt-7 h-20 flex flex-col justify-center blur-small pl-3 pr-3 rounded-xl z-0;
+        overflow: hidden;
+        animation: moovebox2 3s ease infinite;
+    }
+
+    .backgroundblock3{
+        @apply mt-7 h-20 flex flex-col justify-center blur-small pl-3 pr-3 rounded-xl z-0;
+        overflow: hidden;
+        animation: moovebox3 2s ease infinite;
+    }
+
+    .backgroundblock4{
+        @apply mt-7 h-20 flex flex-col justify-center blur-small pl-3 pr-3 rounded-xl z-0;
+        overflow: hidden;
+        animation: moovebox3 1.5s ease infinite;
+    }
+
+    .backgroundblock5{
+        @apply mt-7 h-20 flex flex-col justify-center blur-small pl-3 pr-3 rounded-xl z-0;
+        overflow: hidden;
+        animation: moovebox1 6s ease infinite;
+    }
+
+    .backgroundblock6{
+        @apply mt-7 h-20 flex flex-col justify-center blur-small pl-3 pr-3 rounded-xl z-0;
+        overflow: hidden;
+        animation: moovebox2 3.5s ease infinite;
+    }
+
+    .backgroundblock7{
+        @apply mt-7 h-20 flex flex-col justify-center blur-small pl-3 pr-3 rounded-xl z-0;
+        overflow: hidden;
+        animation: moovebox3 2s ease infinite;
+    }
+
+    .backgroundblock8{
+        @apply mt-7 h-20 flex flex-col justify-center blur-small pl-3 pr-3 rounded-xl z-0;
+        overflow: hidden;
+        animation: moovebox1 6s ease infinite;
+    }
+
+    .backgroundblock9{
+        @apply mt-7 h-20 flex flex-col justify-center blur-small pl-3 pr-3 rounded-xl z-0;
+        overflow: hidden;
+        animation: moovebox2 2.5s ease infinite;
+    }
+
+    .backgroundblock10{
+        @apply mt-7 h-20 flex flex-col justify-center blur-small pl-3 pr-3 rounded-xl z-0;
+        overflow: hidden;
+        animation: moovebox2 1s ease infinite;
+    }
+
+    .backgroundblock11{
+        @apply mt-7 h-20 flex flex-col justify-center blur-small pl-3 pr-3 rounded-xl z-0;
+        overflow: hidden;
+        animation: moovebox3 2s ease infinite;
+    }
+
+    .backgroundblock12{
+        @apply mt-7 h-20 flex flex-col justify-center blur-small pl-3 pr-3 rounded-xl z-0;
+        overflow: hidden;
+        animation: moovebox1 4s ease infinite;
+    }
+
+    .backgroundblock13{
+        @apply mt-7 h-20 flex flex-col justify-center blur-small pl-3 pr-3 rounded-xl z-0;
+        overflow: hidden;
+        animation: moovebox2 2.5s ease infinite;
+    }
+
+    .backgroundblock14{
+        @apply mt-7 h-20 flex flex-col justify-center blur-small pl-3 pr-3 rounded-xl z-0;
+        overflow: hidden;
+        animation: moovebox3 6s ease infinite;
+    }
+
+    .backgroundblock15{
+        @apply mt-7 h-20 flex flex-col justify-center blur-small pl-3 pr-3 rounded-xl z-0;
+        overflow: hidden;
+        animation: moovebox2 3s ease infinite;
+    }
+
+    .backgroundblock16{
+        @apply mt-7 h-20 flex flex-col justify-center blur-small pl-3 pr-3 rounded-xl z-0;
+        overflow: hidden;
+        animation: moovebox3 4s ease infinite;
+    }
+
+    .backgroundblock17{
+        @apply mt-7 h-20 flex flex-col justify-center blur-small pl-3 pr-3 rounded-xl z-0;
+        overflow: hidden;
+        animation: moovebox2 2.5s ease infinite;
+    }
+
+    .chose{
+        @apply flex flex-col items-center gap-10 absolute top-1/4 left-1/2 transform -translate-x-1/2 z-10 text-2xl
+        bg-blue-950 bg-opacity-80 backdrop-blur rounded-2xl p-8 px-12 shadow-lg;}
+
+    .chose-button {
+        @apply shadow-lg shadow-blue-500 bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 cursor-pointer transition transform hover:-translate-y-1;
+    }
+
+
+}
