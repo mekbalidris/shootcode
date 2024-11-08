@@ -78,6 +78,10 @@ body{
 
 @layer components{
 
+    .primary_button{
+        @apply bg-blue-500 rounded-xl w-40 hover:bg-blue-800;
+    }
+
     form{
         @apply flex flex-col gap-9 w-quart sm:w-80 text-black justify-center rounded-lg;
     }
