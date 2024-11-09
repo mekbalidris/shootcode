@@ -23,7 +23,7 @@ export default function Home(){
             </div>
 
             <div className="chose">
-                <div className="chose-button">Play as Guest</div>
+                <div className="chose-button"><a href="/game">Play as Guest</a></div>
                 <div className="chose-button"><a href="/register">Register</a></div>
                 <div className="chose-button">Login</div>
             </div>
