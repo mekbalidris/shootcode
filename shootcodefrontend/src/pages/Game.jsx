@@ -4,12 +4,12 @@ import { useState } from "react";
 export default function Game(){
 
     const [ score, setScore ] = useState(0);
-    const [ places, setPlaces ] = useState([0,0]);
-    const [ languages, setLanguage ] = useState(["C", "Python", "java script"]);
+    const [ places, setPlaces ] = useState(null);
+    const [ languages, setLanguage ] = useState(["C", "Python", "JS"]);
 
-    const handleClick = () => {
+    const handleClick = (language) => {
 
-        setScore(prevScore => prevScore + 1);
+        
 
         const newPlace = {
             top: Math.random() * 80 + "%", 
@@ -20,6 +20,11 @@ export default function Game(){
             left2: Math.random() * 80 + "%"  
         };
 
+        if(places != null) {
+            if(language == selectedLanguage)
+            setScore(prevScore => prevScore + 1);
+        }
+        
         setPlaces([newPlace]);
     };
 
@@ -36,24 +41,25 @@ export default function Game(){
         Shoot the {selectedLanguage} block!!
     </div>
 
-    {places.map((place, index) => {
-
-        if( places == [0,0]){
-            return(
-            <div key={index} onClick={handleClick}>Click to play</div>    
-        )}
-        else{
-        return (
+    {!places ? (
+        <div
+            onClick={() => handleClick(null)} // Wrap in an arrow function
+            style={{ cursor: "pointer", color: "blue" }}
+        >
+            Click to play
+        </div>
+    ) : (
+        places.map((place, index) => (
             <div key={index} className="shooting-container">
                 <div
-                    className="shootingblock bg-blue-500"
+                    className="shootingblock bg-red-500"
                     style={{
                         position: "absolute",
                         top: place.top,
                         left: place.left,
-                        cursor: "pointer",
+                        cursor: "pointer"
                     }}
-                    onClick={handleClick}
+                    onClick={() => handleClick("Python")} // Wrap in an arrow function
                 >
                     print("Hello World!");
                 </div>
@@ -64,28 +70,28 @@ export default function Game(){
                         position: "absolute",
                         top: place.top1,
                         left: place.left1,
-                        cursor: "pointer",
+                        cursor: "pointer"
                     }}
-                    onClick={handleClick}
+                    onClick={() => handleClick("JS")} // Wrap in an arrow function
                 >
                     console.log("Hello World!");
                 </div>
 
                 <div
-                    className="shootingblock bg-blue-500"
+                    className="shootingblock bg-green-500"
                     style={{
                         position: "absolute",
                         top: place.top2,
                         left: place.left2,
-                        cursor: "pointer",
+                        cursor: "pointer"
                     }}
-                    onClick={handleClick}
+                    onClick={() => handleClick("C")} // Wrap in an arrow function
                 >
                     printf("Hello World!");
                 </div>
             </div>
-        )};
-    })}
+        ))
+    )}
 
         </>
 
